@@ -48,6 +48,8 @@ function addRequest(req, url, params) {
     req.path = url.pathname;
     req.query = parsequery(url.query);
     req.search = url.search;
+    req._body = false;
+    req.body = {};
 }
 
 class Pure extends Router {

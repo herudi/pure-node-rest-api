@@ -52,6 +52,17 @@ app.get('/items/:id', (req, res) => {
     });
 });
 
+// search items by name
+app.get('/items-search', (req, res) => {
+    let name = req.query.name;
+    if (!name) throw new Error('Query name is required');
+    let result = fakedb.filter(el => el.name.toLowerCase().indexOf(name) > -1);
+    res.json({
+        statusCode: 200,
+        data: result
+    });
+});
+
 // save items
 app.post('/items', validator, (req, res) => {
     req.body.id = new Date().getTime().toString();
