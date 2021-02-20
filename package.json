@@ -1,0 +1,16 @@
+{
+  "name": "pure-node",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Herudi",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express-validator": "^6.9.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
