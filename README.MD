@@ -23,7 +23,7 @@ GET /items/:id                  /* get items by id  */
 GET /items-search?name=nasi     /* search items by name  */
 POST /items                     /* save items  */
 PUT /items/:id                  /* update items  */
-DELETE /items/id                /* delete items  */
+DELETE /items/:id                /* delete items  */
 ```
 
 ## Sample Data Items
