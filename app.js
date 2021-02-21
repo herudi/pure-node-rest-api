@@ -5,7 +5,7 @@ const { body, validationResult } = require('express-validator');
 let fakedb = [];
 
 // many developer LOVE express-validator
-const validator = [
+const itemsValidator = [
     body('name').isString(),
     body('price').isNumeric(),
     body('brand').isString(),
@@ -22,7 +22,7 @@ const validator = [
 // get index by params id
 const getIndex = (id) => {
     let idx = fakedb.findIndex(el => el.id === id);
-    if (idx === -1) throw new Error('id not found in fakedb');
+    if (idx === -1) throw new Error(`id ${id} not found in fakedb`);
     return idx;
 }
 
@@ -64,7 +64,7 @@ app.get('/items-search', (req, res) => {
 });
 
 // save items
-app.post('/items', validator, (req, res) => {
+app.post('/items', itemsValidator, (req, res) => {
     req.body.id = new Date().getTime().toString();
     req.body.userBy = req.user;
     fakedb.push(req.body);
@@ -75,7 +75,7 @@ app.post('/items', validator, (req, res) => {
 });
 
 // update items
-app.put('/items/:id', validator, (req, res) => {
+app.put('/items/:id', itemsValidator, (req, res) => {
     let id = req.params.id;
     let idx = getIndex(id);
     fakedb[idx] = { id, userBy: req.user, ...req.body };

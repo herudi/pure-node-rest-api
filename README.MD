@@ -1,17 +1,18 @@
 # Pure Nodejs REST APIs
+Simple REST APIs nodejs without framework.
+
+## Feature
+- Support express middleware (multer, express-validator, cors and other.).
+- Safe, write code without try and catch block.
 
 ## Usage
 ```bash
 git clone https://github.com/herudi/pure-node-rest-api.git
 cd pure-node-rest-api
 npm install
-// or
-yarn
 
-// run development
-npm run dev
-// or
-yarn dev
+// run application
+npm run start
 ```
 
 ## Route Available
@@ -33,6 +34,8 @@ DELETE /items/id                /* delete items  */
     "brand": "Nasi"
 }
 ```
+
+> Similar but complete case, fast and small [Baskom.js](https://github.com/herudi/baskom)
 
 ## License
 
