@@ -66,7 +66,7 @@ class Router {
                 handlers = obj.handlers;
             } else {
                 handlers = addMiddleware(this.midds, notFound, obj.handlers);
-                this.route[method + url] = { isMidds: true, handlers };
+                this.route[method + url] = { isMidds: true, params: {}, regex: null, handlers };
             }
         } else {
             let routes = this.route[method] || [];
